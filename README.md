@@ -66,7 +66,6 @@ Every model generates a **6-panel diagnostic dashboard**:
 **XAI Methods:**
 - **Attention Rollout** — For Vision Transformers (traces attention flow across layers)
 - **Gradient Saliency** — For CNNs/ResNets (∂Output/∂Input sensitivity)
-- **t-SNE Latent Space** — For Autoencoder (cluster visualization)
 
 ## Repository Structure
 
