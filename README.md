@@ -1,6 +1,6 @@
 # Explainable Deep Learning Architectures for Early Disease Detection in Tulsi (*Ocimum tenuiflorum*) Using Hyperspectral Imaging
 
-## 📌 Overview
+##  Overview
 
 This research develops and compares **five deep learning architectures** specifically designed for hyperspectral image (HSI) classification, applied to early disease detection in Tulsi (Holy Basil). Unlike traditional RGB-based plant disease detection that relies on only 3 colour channels, this project leverages **168 spectral bands** capturing reflectance from visible to near-infrared wavelengths — enabling detection of disease markers invisible to the naked eye.
 
@@ -8,7 +8,7 @@ Every model includes **Explainable AI (XAI)** to provide transparent, biological
 
 ---
 
-## 🔬 Key Contributions
+## Key Contributions
 
 1. **Novel HSI-specific architectures** — SSViT-v2 and HSI-ResNet process hyperspectral data natively without lossy compression or artificial upsampling.
 2. **Spectral Attention mechanisms** — Squeeze-and-Excitation (SE) blocks dynamically learn which of the 168 wavelengths are most diagnostic.
@@ -17,7 +17,7 @@ Every model includes **Explainable AI (XAI)** to provide transparent, biological
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 ```
 ├── extract_patches.py                   # Preprocessing: Raw HSI → 5×5×168 3D patches
@@ -33,7 +33,7 @@ Every model includes **Explainable AI (XAI)** to provide transparent, biological
 
 ---
 
-## 🗂️ Dataset
+## Dataset
 
 | Property | Value |
 |---|---|
@@ -62,7 +62,7 @@ Tulsi/
 
 ---
 
-## ⚙️ Preprocessing Pipeline — `extract_patches.py`
+## Preprocessing Pipeline — `extract_patches.py`
 
 The preprocessing script converts raw hyperspectral cubes into a clean, labelled dataset of 3D patches ready for deep learning. The full pipeline is:
 
@@ -110,7 +110,7 @@ This notebook is useful for visually verifying that the segmentation correctly i
 
 ---
 
-## 🧠 Model Architectures — `train_all_models_comparison.ipynb`
+## Model Architectures — `train_all_models_comparison.ipynb`
 
 All five models are defined, trained, evaluated, and explained in a single unified notebook. Below is a deep architectural breakdown of each.
 
@@ -295,7 +295,7 @@ x → Conv2D(3×3) → BN → ReLU → Conv2D(3×3) → BN → + shortcut → Re
 
 ---
 
-## 🔍 Explainable AI (XAI)
+## Explainable AI (XAI)
 
 Every model generates a **standardised 6-panel diagnostic dashboard**, enabling fair comparison of explainability across architectures.
 
@@ -328,7 +328,7 @@ The notebook also generates **multi-model comparison panels** — for each test 
 
 ---
 
-## 📈 Evaluation & Comparison
+## Evaluation & Comparison
 
 After training all 5 models, the notebook produces:
 
@@ -340,7 +340,7 @@ After training all 5 models, the notebook produces:
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Prerequisites
 
@@ -373,22 +373,7 @@ Open and run `train_all_models_comparison.ipynb` (GPU recommended). This will:
 
 ---
 
-## 📄 Generated Outputs
-
-After running the notebook, the following files are produced:
-
-| File | Description |
-|---|---|
-| `ckpt_{model}/best.keras` | Best checkpoint per model |
-| `cm_{model}.png` | Confusion matrix heatmap |
-| `xai_{model}_{idx}.png` | Individual 6-panel XAI dashboards |
-| `xai_all5_compare_{idx}.png` | All-models side-by-side XAI comparison |
-| `all_training_curves.png` | Training/validation accuracy & loss curves |
-| `accuracy_comparison.png` | Accuracy bar chart across all models |
-
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Tool | Purpose |
 |---|---|
